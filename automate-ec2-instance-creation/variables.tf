@@ -7,7 +7,7 @@ variable "ec2_image" {
 
 variable "ec2_instance_type" {
     description = "The instance type for the EC2 instance"
-    default     = "t2.micro"
+    default     = "t3.micro"
     type        = string
 }
 
