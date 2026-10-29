@@ -36,21 +36,21 @@ resource "aws_security_group" "aws_multi_instance_sg" {
 
 resource "aws_instance" "multi_instance" {
 
-    for_each = tomap({
-        var.instace_name[0] = var.instace_type[0]
-        var.instace_name[1] = var.instace_type[1]
-    })
-    ami = var.image
-    key_name = aws_key_pair.terraform_key_pair_multi_instance.key_name
-    vpc_security_group_ids = [aws_security_group.aws_multi_instance_sg.id]
-    instance_type = each.value
-    user_data = file("nginx.sh")
-    root_block_device {
-        volume_size           = 8
-        volume_type           = "gp2"
-        delete_on_termination = true
-    }
-    tags = {
-    Name        = each.key
-    }
+  for_each = tomap({
+    (var.instace_name[0]) = var.instace_type[0]
+    (var.instace_name[1]) = var.instace_type[1]
+  })
+  ami                    = var.image
+  key_name               = aws_key_pair.terraform_key_pair_multi_instance.key_name
+  vpc_security_group_ids = [aws_security_group.aws_multi_instance_sg.id]
+  instance_type          = each.value
+  user_data              = file("nginx.sh")
+  root_block_device {
+    volume_size           = 8
+    volume_type           = "gp2"
+    delete_on_termination = true
+  }
+  tags = {
+    Name = each.key
+  }
 }
