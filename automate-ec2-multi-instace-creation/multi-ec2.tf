@@ -44,6 +44,7 @@ resource "aws_instance" "multi_instance" {
     key_name = aws_key_pair.terraform_key_pair_multi_instance.key_name
     vpc_security_group_ids = [aws_security_group.aws_multi_instance_sg.id]
     instance_type = each.value
+    user_data = file("nginx.sh")
     root_block_device {
         volume_size           = 8
         volume_type           = "gp2"
