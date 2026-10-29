@@ -26,13 +26,13 @@ variable "protocol" {
 }
 
 variable "instace_type" {
-type = list(string)
-default = ["t2.micro", "t2.micro"]
+  type    = list(string)
+  default = ["t2.micro", "t2.micro"]
 }
 
 variable "instace_name" {
-type = list(string)
-default = ["instance-1", "instance-2"]
+  type    = list(string)
+  default = ["instance-1", "instance-2"]
 }
 
 variable "image" {
@@ -40,6 +40,6 @@ variable "image" {
   type    = string
 }
 variable "environment" {
- type = list(string)
- default = ["dev", "prod"]
+  type    = list(string)
+  default = ["dev", "prod"]
 }

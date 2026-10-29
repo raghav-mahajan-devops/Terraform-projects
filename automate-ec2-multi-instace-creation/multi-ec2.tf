@@ -45,6 +45,7 @@ resource "aws_instance" "multi_instance" {
   vpc_security_group_ids = [aws_security_group.aws_multi_instance_sg.id]
   instance_type          = each.value
   user_data              = file("nginx.sh")
+  region                 = "us-west-2"
   root_block_device {
     volume_size           = 8
     volume_type           = "gp2"
