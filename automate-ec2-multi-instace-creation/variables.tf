@@ -27,7 +27,7 @@ variable "protocol" {
 
 variable "instace_type" {
   type    = list(string)
-  default = ["t2.micro", "t2.micro"]
+  default = ["t3.micro", "t3.small"]
 }
 
 variable "instace_name" {
@@ -36,7 +36,7 @@ variable "instace_name" {
 }
 
 variable "image" {
-  default = "ami-0c55b159cbfafe1f0"
+  default = "ami-03a23d9d58ea08615"
   type    = string
 }
 variable "environment" {
