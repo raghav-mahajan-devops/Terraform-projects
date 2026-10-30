@@ -1,6 +1,10 @@
 output "dns_name" {
-  value = aws_instance.multi_instance[each.key].public_dns
+    value = [
+        for dns in aws_instance.multi_instance : dns.public_dns
+    ]
 }
 output "public_ip" {
-  value = aws_instance.multi_instance[each.key].public_ip
+     value = [
+        for ip in aws_instance.multi_instance : ip.public_ip
+    ]
 }
