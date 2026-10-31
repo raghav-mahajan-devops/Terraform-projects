@@ -1,2 +1,9 @@
-create_vpc_using_inbuilt_module/.terraform.tfstate.lock.info
-automate-ec2-multi-instace-creation/backup.tfstate
+# Terraform working folders (downloaded providers and modules)
+**/.terraform/
+
+# Terraform state and its backups
+*.tfstate
+*.tfstate.*
+
+# Provider lock files
+.terraform.lock.hcl

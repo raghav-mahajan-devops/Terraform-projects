@@ -3,7 +3,7 @@ variable "dynamodb_table_name" {
   type    = string
 }
 variable "dynamodb_table_hash_key" {
-  default = "LockId"
+  default = "LockID"
   type    = string
 }
 variable "dynamodb_table_billing_mode" {
@@ -11,7 +11,7 @@ variable "dynamodb_table_billing_mode" {
   type    = string
 }
 variable "dynamodb_table_attribute_name" {
-  default = "LockId"
+  default = "LockID"
   type    = string
 }
 
