@@ -7,3 +7,13 @@
 
 # Provider lock files
 .terraform.lock.hcl
+
+# Saved plans and crash logs (can contain sensitive values)
+*.tfplan
+crash.log
+crash.*.log
+
+# Secrets and keys
+.env
+*.pem
+*.key
